@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "tap-googleads"
+version = "0.1.8"
+description = "`tap-googleads` is a Singer tap for GoogleAds, built with the Meltano SDK for Singer Taps."
+authors = ["Steven Leong <howsenpl@hotmail.com>"]
+license = "Apache 2.0"
+keywords = [
+    "ELT",
+    "GoogleAds",
+]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+singer-sdk = "^0.41.0"
+memoization = "^0.4.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+tox = "^4.23.2"
+flake8 = "^7.1.1"
+black = "^24.10.0"
+pydocstyle = "^6.3.0"
+mypy = "^1.13.0"
+responses = "^0.25.3"
+urllib3 = "1.26.20"
+types-requests = "2.31.0.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+# CLI declaration
+tap-googleads = 'tap_googleads.tap:TapGoogleAds.cli'
